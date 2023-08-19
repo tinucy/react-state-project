@@ -1,11 +1,11 @@
 import React, { useState } from "react"; // importing state to monitor the state of the component
 
 export default function FormExample() {
-  const [firstname, setFirstname] = useState(""); //firstname is the state that we define.
-  //we set out first state setFirstname, with an initial value of " ".
+  const [firstname, setFirstname] = useState("John"); //firstname is the state that we define.
+  //we set out first state setFirstname, with an initial/default value of " " e.g useState("")
   //firstname is a variable, setFirstname is a function. Whatever is typed into useState('') reflects in the input of the form
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
+  const [lastname, setLastname] = useState("Smith");
+  const [email, setEmail] = useState("J@smith.com");
 
   return (
     <form>
