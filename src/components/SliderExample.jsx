@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function SliderExample() {
   const [SliderValue, setSliderValue] = useState(0);
+
   const handleChange = (e) => {
     setSliderValue(e.target.value);
   };
