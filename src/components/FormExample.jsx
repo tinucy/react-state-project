@@ -7,10 +7,17 @@ export default function FormExample() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
 
-  console.log(firstname, lastname, email);
+  const handleSubmit = (e) => {
+    e.preventDefault(); //prevents the entire page from reloading
+    console.log(firstname, lastname, email);
+    //clear form
+    setFirstname("");
+    setLastname("");
+    setEmail("");
+  };
 
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <p>
         <label>
           First Name:
@@ -46,6 +53,9 @@ export default function FormExample() {
             onChange={(e) => setEmail(e.target.value)}
           />{" "}
         </label>
+      </p>
+      <p>
+        <input type="Submit" value="Submit" />
       </p>
     </form>
   );
