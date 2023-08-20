@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function ColorChanger() {
-  const [bgColor, setBgColor] = useState("lightgreen");
+  const [bgColor, setBgColor] = useState("green");
 
   return (
     <div>
@@ -10,7 +10,7 @@ export default function ColorChanger() {
         style={{
           width: "200px",
           height: "200px",
-          backgroundColor: "bgColor",
+          backgroundColor: bgColor,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
