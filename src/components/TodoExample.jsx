@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 export default function TodoExample() {
-  const [todos, setTodos] = useState([
-    // array of 3 objects inside the Todo state
+  const todoItems = [
     {
       id: 1,
       title: "learn ",
@@ -20,14 +19,30 @@ export default function TodoExample() {
       title: "learn react-redux",
       completed: false,
     },
-  ]);
+  ];
+
+  const [todos, setTodos] = useState(todoItems);
+
+  const handleCheckboxChange = (todoId) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
   return (
     <div>
       <h2>Todo List</h2>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <input type="checkbox" checked={todo.completed} />
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => handleCheckboxChange(todo.id)}
+            />
             {todo.title}
           </li>
         ))}
